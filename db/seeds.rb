@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "start loading data"
+
+Mood.destroy_all
+User.destroy_all
+
+ariba = User.create!(name: "Ariba")
+
+Mood.create(mood_level: 1, user: ariba)
+Mood.create(mood_level: 2, user: ariba)
+Mood.create(mood_level: 3, user: ariba)
+Mood.create(mood_level: 4, user: ariba)
+Mood.create(mood_level: 5, user: ariba)
+Mood.create(mood_level: 6, user: ariba)
+Mood.create(mood_level: 7, user: ariba)
+Mood.create(mood_level: 8, user: ariba)
+Mood.create(mood_level: 9, user: ariba)
+Mood.create(mood_level: 10, user: ariba)
+
+puts "finish loading data"
