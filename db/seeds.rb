@@ -13,15 +13,23 @@ User.destroy_all
 
 ariba = User.create!(name: "Ariba")
 
-Mood.create(mood_level: 1, user: ariba)
-Mood.create(mood_level: 2, user: ariba)
-Mood.create(mood_level: 3, user: ariba)
-Mood.create(mood_level: 4, user: ariba)
-Mood.create(mood_level: 5, user: ariba)
-Mood.create(mood_level: 6, user: ariba)
-Mood.create(mood_level: 7, user: ariba)
-Mood.create(mood_level: 8, user: ariba)
-Mood.create(mood_level: 9, user: ariba)
-Mood.create(mood_level: 10, user: ariba)
+# Mood.create(mood_level: 1, user: ariba)
+# Mood.create(mood_level: 2, user: ariba)
+# Mood.create(mood_level: 3, user: ariba)
+# Mood.create(mood_level: 4, user: ariba)
+# Mood.create(mood_level: 5, user: ariba)
+# Mood.create(mood_level: 6, user: ariba)
+# Mood.create(mood_level: 7, user: ariba)
+# Mood.create(mood_level: 8, user: ariba)
+# Mood.create(mood_level: 9, user: ariba)
+# Mood.create(mood_level: 10, user: ariba)
+
+20.times do
+    Mood.create(
+        mood_level: rand(10) + 1,
+        date: (Faker::Date.between(from: 1.year.ago, to: Date.today)).to_datetime,
+        user: ariba
+    )
+end
 
 puts "finish loading data"

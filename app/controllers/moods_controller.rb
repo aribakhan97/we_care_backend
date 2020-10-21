@@ -6,11 +6,13 @@ class MoodsController < ApplicationController
     end
 
     def new 
-        @mood = Mood.new
+        mood = Mood.new
+        render json: mood
     end 
 
     def create 
-        @mood = Mood.create(mood_params)  
+        mood = Mood.create(mood_params)  
+        render json: mood
     end 
 
     private
