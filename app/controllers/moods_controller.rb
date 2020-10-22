@@ -5,6 +5,11 @@ class MoodsController < ApplicationController
         render json: moods
     end
 
+    def show
+        mood = Mood.find(params[:id])
+        render json: mood
+    end
+
     def new 
         mood = Mood.new
         render json: mood
@@ -13,7 +18,13 @@ class MoodsController < ApplicationController
     def create 
         mood = Mood.create(mood_params)  
         render json: mood
-    end 
+    end
+    
+    def destroy
+        mood = Mood.find(params[:id])
+        mood.destroy
+        render body: nil, status: :no_content
+    end
 
     private
 
