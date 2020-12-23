@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: we_care_backend_production
   username: we_care_backend
   password: <%= ENV['WE_CARE_BACKEND_DATABASE_PASSWORD'] %>
